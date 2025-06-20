@@ -46,7 +46,7 @@ const PI = Math.PI;
 const TAU = 2 * PI;
 const arc = TAU / sectors.length;
 
-const friction = 0.991; // 0.995=soft, 0.99=mid, 0.98=hard
+const friction = 0.995; // 0.995=soft, 0.99=mid, 0.98=hard
 let angVel = 0; // Angular velocity
 let ang = 0; // Angle in radians
 
@@ -114,7 +114,7 @@ function init() {
   rotate(); // Initial rotation
   engine(); // Start engine
   spinEl.addEventListener("click", () => {
-    if (!angVel) angVel = rand(0.25, 0.45);
+    if (!angVel) angVel = rand(0.15, 0.25);
     spinButtonClicked = true;
   });
 }
