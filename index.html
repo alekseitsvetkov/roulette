@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Рулетка "Торт"</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+    </style>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="text-center mb-8">
+      <h1 class="text-6xl font-bold text-gray-800 mb-4">🍰 Рулетка "Торт" 🍰</h1>
+      <p class="text-2xl text-gray-800 result-text">Крутите колесо с числами от 1 до 30! <br> Число 21 приносит ТОРТ! 🎉</p>
+    </div>
+    <div id="spin_the_wheel">
+      <canvas id="wheel" width="800" height="800"></canvas>
+      <div id="spin">Крутить колесо</div>
+    </div>
+    <div id="result" class="result-text text-gray-800 min-h-20"></div>
+    <script defer src="src/index.js"></script>
+  </body>
+</html>
