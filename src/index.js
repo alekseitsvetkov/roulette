@@ -3,7 +3,10 @@ const sectors = Array.from({ length: 30 }, (_, i) => {
   let color;
   let text;
 
-  if (labelNumber === 21) {
+  // Победные числа: 1, 5, 9, 13, 17, 21, 24, 27
+  const winningNumbers = [1, 5, 9, 13, 17, 21, 24, 27];
+  
+  if (winningNumbers.includes(labelNumber)) {
     color = "#4CAF50";
     text = "#FFFFFF";
   } else if (i % 2 === 0) {
@@ -124,9 +127,12 @@ init();
 events.addListener("spinEnd", (sector) => {
   const resultEl = document.querySelector("#result");
   const winningNumber = parseInt(sector.label, 10);
+  
+  // Победные числа: 1, 5, 9, 13, 17, 21, 24, 27
+  const winningNumbers = [1, 5, 9, 13, 17, 21, 24, 27];
 
-  if (winningNumber === 21) {
-    resultEl.innerHTML = `🎉🍰 ПОЗДРАВЛЯЕМ! Выпало число 21 - это ТОРТ! 🍰🎉`;
+  if (winningNumbers.includes(winningNumber)) {
+    resultEl.innerHTML = `🎉🍰 ПОЗДРАВЛЯЕМ! Выпало число ${winningNumber} - это ТОРТ! 🍰🎉`;
   } else {
     resultEl.innerHTML = `Выпало число: ${winningNumber}<br/>К сожалению, мимо. 😔`;
   }
